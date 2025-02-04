@@ -1,1 +1,1 @@
-console.log("LINKED!");
+document.body.style.backgroundColor = "red";
