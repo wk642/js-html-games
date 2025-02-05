@@ -8,10 +8,9 @@ function getHorT(userChoice) {
   let choiceMsg = document.getElementById("choiceMessage");
   choiceMsg.innerText = `You picked ${userChoice}`;
 
-  let coinFlipResults = "";
+  let coinFlipResult = "";
   let coinFlipResultMsg = document.getElementById("coinFlipResult");
-
-  // start of coin flip
+  let resultMsg = document.getElementById("result");
   let randomNumber = Math.random();
   console.log(`Random : ${randomNumber}`);
 
@@ -21,5 +20,13 @@ function getHorT(userChoice) {
   } else {
     coinFlipResult = "TAILS";
     coinFlipResultMsg.innerText = `It is:  ${coinFlipResult}!!!!!!`;
+  }
+
+  console.log(userChoice.toUpperCase());
+  console.log(`conflip: ${coinFlipResult}`);
+  if (coinFlipResult === userChoice.toUpperCase()) {
+    resultMsg.innerText = "You win";
+  } else {
+    resultMsg.innerText = "Nope";
   }
 }
