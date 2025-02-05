@@ -5,10 +5,11 @@ function getHorT(userChoice) {
   let tailsChoice = document.getElementById("tails-button").value;
   // console.log(`We are in! ${tailsChoice}`);
 
-  let msg = document.getElementById("message");
-  msg.innerText = `You picked ${userChoice}`
+  let choiceMsg = document.getElementById("message");
+  choiceMsg.innerText = `You picked ${userChoice}`;
 
-  
+  let coinFlipResultMsg = document.getElementById("coinFlipResult");
+  coinFlipResultMsg.innerText = `It is:  ${coinFlipResult}!!!!!!`;
 
   
 }
