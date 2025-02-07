@@ -5,15 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winine's games</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/6190dbb9d7.js" crossorigin="anonymous"></script>
+
+    <!-- Google Font: Lacquer-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <section>
-      <label>Hi! What is your name?</label>
-      <input type="text">
-      <input type="submit" onclick ="window.location.href = './pickGame.html'" >
-    </section>
-
+    <header>
+      <div class="content">
+        <div id="start-button">
+          <button onclick="startUp()" >
+            <i class="fa-solid fa-play fa-2x"></i>
+          </button>
+        </div>
+  
+        <div id="starting-message" style="display: none">
+          <label>Hi! What is your name?</label>
+          <br>
+          <input type="text">
+          <br>
+          <input type="submit" onclick ="window.location.href = './pickGame.html'" >
+        </div>
+      </div>  
+    </header>
+    
+    <body>
+      Games made outof HTML and JS and a little bit of css
+    </body>
     <script src="script.js"></script>
   </body>
 </html>

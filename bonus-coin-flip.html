@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+  <body>
+    <header> 
+      <h1>Bonus Coin Flip</h1> 
+    </header>
+    
+    <div class="game-content">
+      <div class="conflip-prompt">
+        <h2>How many coins do you want to flip?<h2>
+
+        <label for="numOfCoins">Number of Coins (1-10):</label>
+
+        <input type="number" id="numOfCoins" name="numOfCoins" min="1" max="10" onkeypress="getNumOfCoins()"/>
+        
+        <h2> You want to flip <span id="userInputCoins"></span> coins?</h2>
+        <h1>Heads or Tails?</h1>
+      </div>
+
+      <div class="ht-buttons">
+        <button type="button" id="heads-button" onclick="getHorT('heads')" value="user-head">HEADS</button>
+  
+        <button type="button" id="tails-button" onclick="getHorT('tails')" value="user-tails">TAILS</button>
+      </div>
+
+      <div class="conflip-messages">
+        <div id="choiceMessage">You picked: </div>
+    
+        <div id="coinFlipResult"></div>
+          <div class="user-scores">You: </div>
+          <div class="our-scores">Us: </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <a href="./coinFlip.html"><i class="fa-solid fa-arrow-left" ></i></a>
+      <a href="./index.html"><i class="fa-solid fa-house"></i></a>
+      
+      <div class="changeVersion">
+        <p>
+          <a href="coinFlip.html">Regular Version</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

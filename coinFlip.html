@@ -5,16 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin Flip</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/6190dbb9d7.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <h1>Coin Flip</h1> 
-    <!-- TODO:
-     2. Coin will have a 50 % chance heads and 50% chance tails
-     3. store something the answer
-     4. return the answer to the user
-     5. let them know if they got it right or wrong
+    <header> 
+      <h1>Coin Flip</h1> 
+    </header>
     
+    <div class="game-content">
+      <div class="conflip-prompt">
+        <h1>Heads or Tails?</h1>
+      </div>
+
+      <div class="ht-buttons">
+        <button type="button" id="heads-button" onclick="getHorT('heads')" value="user-head">HEADS</button>
+  
+        <button type="button" id="tails-button" onclick="getHorT('tails')" value="user-tails">TAILS</button>
+      </div>
+
+      <!-- <div class="conflip-messages"> -->
+        <div><span id="choiceMessage"></span></div>
+    
+        <div><span id="coinFlipResult"></span></div>
+        <div><span id="user-score"></span></div>
+        <div><span id="our-score"></span></div>
+      <!-- </div> -->
+    </div>
+
+    <footer>
+      <a href="./pickGame.html"><i class="fa-solid fa-arrow-left fa-2x"></i></a>
+      <a href="./index.html"><i class="fa-solid fa-house fa-2x"></i></a>
+      
+      <div class="changeVersion">
+        <p>
+          <a href="bonus-coin-flip.html">Bonus Version</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- TODO:
     if time alows:
     Animate the coin if time allows 
     Prompt user to type in how many flips they would like 
@@ -27,20 +61,3 @@
       1.1 create two buttons, heads, tails
       1.2 store what user clicked on
       When user clicks on the button start coin flip-->
-      <h1>Heads or Tails?</h1>
-      <button type="button" id="heads-button" onclick="getHorT('heads')" value="user-head">HEADS</button>
-
-      <button type="button" id="tails-button" onclick="getHorT('tails')" value="user-tails">TAILS</button>
-
-      <div id="choiceMessage"></div>
-
-      <div id="coinFlipResult"></div>
-
-      <div id="result"></div>
-      <div id="scores">
-        <div class="scores"></div>
-        <div class="scores"></div>
-      </div>
-    <script src="script.js"></script>
-  </body>
-</html>

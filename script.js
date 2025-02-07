@@ -1,43 +1,73 @@
 function getHorT(userChoice) {
-  let choiceMsg = document.getElementById("choiceMessage");
-  choiceMsg.innerText = `You picked ${userChoice}`;
-
   let coinFlipResult = "";
   let userScore = 0;
   let ourScore = 0;
+  let choiceMsg = document.getElementById("choiceMessage");
   let coinFlipResultMsg = document.getElementById("coinFlipResult");
   let resultMsg = document.getElementById("result");
-  let scoreMsg = document.getElementsByClassName("scores");
+  let userScoreDisplay = document.getElementById("user-score");
+  let ourScoreDisplay = document.getElementById("our-score");
   let randomNumber = Math.random();
-  console.log(`Random : ${randomNumber}`);
 
-  function flipCoin(){
+  let numOfCoins = document.getElementById("numOfCoins");
+  let userInputCoins = document.getElementById("userInputCoins");
+
+  userScoreDisplay.innerText = "You:" + userScore;
+  ourScoreDisplay.innerText = `US : 0`;
+
+  // function getNumOfCoins() {
+  //   numOfCoins.addEventListener(keyup() = function() {
+  //     userInputCoins.innerText = 3;
+  //   });
+  // }
+
+  //Display user's choice
+  choiceMsg.textContent = `You picked ${userChoice}`;
+
+  // flip the coin
+  function flipCoin() {
     if (randomNumber > 0.5) {
       coinFlipResult = "HEADS";
-      coinFlipResultMsg.innerText = `It is:  ${coinFlipResult}!!!!!!`;
+      coinFlipResultMsg.textContent = `It is:  ${coinFlipResult}!!!!!!`;
     } else {
       coinFlipResult = "TAILS";
-      coinFlipResultMsg.innerText = `It is:  ${coinFlipResult}!!!!!!`;
+      coinFlipResultMsg.textContent = `It is:  ${coinFlipResult}!!!!!!`;
     }
   }
-  
-  flipCoin();
-  console.log(userChoice.toUpperCase());
-  console.log(`conflip: ${coinFlipResult}`);
 
+  // Display the results
   function display() { 
     if (coinFlipResult === userChoice.toUpperCase()) {
       resultMsg.innerText = "You got that one right";
-      userScore ++;
+      // console.log(ourScore);
+      // console.log(userScore);
+      userScore++;
       ourScore = ourScore;
-      scoreMsg[0].innerHTML = `YOU : ${userScore} Us: ${ourScore}`;
+      // console.log(ourScore);
+      // console.log(userScore);
+      userScoreDisplay.innerText = `YOU : ${userScore}`;
+      ourScoreDisplay.innerText = `Us: ${ourScore}`;
+
     } else {
       resultMsg.innerText = "Nope";
-      ourScore ++;
+      // console.log(ourScore);
+      // console.log(userScore);
+      ourScore++;
       userScore = userScore;
-      scoreMsg[1].innerHTML = `You: ${userScore} Us: ${ourScore}`;
+      // console.log(ourScore);
+      // console.log(userScore);
+      userScoreDisplay.innerText = `You: ${userScore}`;
+      ourScoreDisplay.innerText = `Us: ${ourScore}`;
     }
   }
+  flipCoin();
   display();
+}
+
+function startUp() {
+  let startMessage = document.getElementById("starting-message");
+  let startButton = document.getElementById("start-button")
   
+  startMessage.style.display = "block";
+  startButton.style.display = "none";
 }
