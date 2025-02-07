@@ -7,28 +7,37 @@ function getHorT(userChoice) {
   let ourScore = 0;
   let coinFlipResultMsg = document.getElementById("coinFlipResult");
   let resultMsg = document.getElementById("result");
-  let scoreMsg = document.getElementById("scores");
+  let scoreMsg = document.getElementsByClassName("scores");
   let randomNumber = Math.random();
   console.log(`Random : ${randomNumber}`);
-// add functions
-  if (randomNumber > 0.5) {
-    coinFlipResult = "HEADS";
-    coinFlipResultMsg.innerText = `It is:  ${coinFlipResult}!!!!!!`;
-  } else {
-    coinFlipResult = "TAILS";
-    coinFlipResultMsg.innerText = `It is:  ${coinFlipResult}!!!!!!`;
-  }
 
+  function flipCoin(){
+    if (randomNumber > 0.5) {
+      coinFlipResult = "HEADS";
+      coinFlipResultMsg.innerText = `It is:  ${coinFlipResult}!!!!!!`;
+    } else {
+      coinFlipResult = "TAILS";
+      coinFlipResultMsg.innerText = `It is:  ${coinFlipResult}!!!!!!`;
+    }
+  }
+  
+  flipCoin();
   console.log(userChoice.toUpperCase());
   console.log(`conflip: ${coinFlipResult}`);
-  if (coinFlipResult === userChoice.toUpperCase()) {
-    resultMsg.innerText = "You win";
-    userScore ++;
-    scoreMsg[0].innerHTML = `YOU : ${userScore} Us: ${ourScore}`;
-  } else {
-    resultMsg.innerText = "Nope";
-    ourScore ++;
-    scoreMsg[1].innerHTML = `You: ${userScore} Us: ${ourScore}`;
+
+  function display() { 
+    if (coinFlipResult === userChoice.toUpperCase()) {
+      resultMsg.innerText = "You got that one right";
+      userScore ++;
+      ourScore = ourScore;
+      scoreMsg[0].innerHTML = `YOU : ${userScore} Us: ${ourScore}`;
+    } else {
+      resultMsg.innerText = "Nope";
+      ourScore ++;
+      userScore = userScore;
+      scoreMsg[1].innerHTML = `You: ${userScore} Us: ${ourScore}`;
+    }
   }
+  display();
   
 }
