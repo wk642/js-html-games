@@ -37,25 +37,20 @@ function getHorT(userChoice) {
 
   // Display the results
   function display() { 
+
     if (coinFlipResult === userChoice.toUpperCase()) {
-      resultMsg.innerText = "You got that one right";
-      // console.log(ourScore);
-      // console.log(userScore);
+      resultMsg.innerText= "You got that one right";
+      console.log("I'm here");
       userScore++;
       ourScore = ourScore;
-      // console.log(ourScore);
-      // console.log(userScore);
       userScoreDisplay.innerText = `YOU : ${userScore}`;
       ourScoreDisplay.innerText = `Us: ${ourScore}`;
 
     } else {
+      console.log("Else statement");
       resultMsg.innerText = "Nope";
-      // console.log(ourScore);
-      // console.log(userScore);
       ourScore++;
       userScore = userScore;
-      // console.log(ourScore);
-      // console.log(userScore);
       userScoreDisplay.innerText = `You: ${userScore}`;
       ourScoreDisplay.innerText = `Us: ${ourScore}`;
     }
