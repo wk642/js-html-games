@@ -1,7 +1,8 @@
+let userScore = 0;
+let ourScore = 0;
+
 function getHorT(userChoice) {
   let coinFlipResult = "";
-  let userScore = 0;
-  let ourScore = 0;
   let choiceMsg = document.getElementById("choiceMessage");
   let coinFlipResultMsg = document.getElementById("coinFlipResult");
   let resultMsg = document.getElementById("result");
